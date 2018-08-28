@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="iota_ros_pkg" type="iota_ros_main.py" name="iota" output="screen">
+    </node>
+</launch>

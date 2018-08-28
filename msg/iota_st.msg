@@ -1,0 +1,10 @@
+Header header
+string node_pow
+string node_routing
+string seed
+int32 depth
+string address
+int32 sending_value
+string tag
+string message
+bool RDY
