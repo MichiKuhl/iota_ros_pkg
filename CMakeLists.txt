@@ -9,7 +9,10 @@ find_package(catkin REQUIRED COMPONENTS
 
 add_message_files(
  FILES
- iota_st.msg
+ check_balance_address.msg
+ main.msg
+ send_transaction.msg
+ transaction_info.msg
 )
 
 generate_messages(
