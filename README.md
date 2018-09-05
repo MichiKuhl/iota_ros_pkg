@@ -29,9 +29,9 @@ This package was only tested with ROS Kinetic.
       
 If you like my project please consider to leave me a donation :)
 
-![alt text](https://cdn-images-1.medium.com/max/1600/1*GHWv75TuyzvJeMMl-zrvFQ.png)
+![alt text](https://cdn-images-1.medium.com/max/800/1*NZxFN2XrzRyIAXmx3kxWhA.png)
 
 
-HOZZVNMVBFBBG9HPZBYOUELTFJBOIMQIDWPOJSJUOCURBZKPXOOPFWTGFIJDKNBKTKXC9UOIJEVHZSCSCS9NOXZZMA
+RDIFGGRTPOKUIOZXIPGKSJJJ9CDJYMNELFNVFW9JJEMZBWTYAULSNOFASPREPGDLXVPGRPGROBBDVMHJWBZOKFIXNX
 
 Discord: Michi#8255
