@@ -10,13 +10,11 @@ https://github.com/iotaledger/iota.lib.py
 
 
 **How to use:**
-
-To make a transaction you only need to publish an **iota_st.msg** into the **/iota/iota_send Topic**.
-
+[TODO]
 
 Use the following command to start the IOTA Node:
 
-`rosrun iota_ros_pkg iota_ros_main.py`
+`roslaunch iota_ros_pkg iota_ros_pkg.launch`
 
 This package was only tested with ROS Kinetic.
 

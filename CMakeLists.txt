@@ -9,6 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 add_message_files(
  FILES
+ confirmed_transaction_info.msg
  check_balance_address.msg
  main.msg
  send_transaction.msg

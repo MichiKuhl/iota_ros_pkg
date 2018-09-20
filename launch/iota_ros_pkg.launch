@@ -1,4 +1,8 @@
 <launch>
     <node pkg="iota_ros_pkg" type="send_transaction.py" name="send_transaction" output="screen">
     </node>
+    <node pkg="iota_ros_pkg" type="get_transaction_info.py" name="get_transaction_info" output="screen">
+    </node>
+    <node pkg="iota_ros_pkg" type="get_c_transaction_info.py" name="get_c_transaction_info" output="screen">
+    </node>
 </launch>

@@ -2,14 +2,14 @@
 import urllib2
 import json
 import rospy
-from iota import TryteString
+from iota import TryteString, int_from_trits
 from iota import Iota
 from iota_ros_pkg.msg import main
 from iota_ros_pkg.msg import transaction_info
 from std_msgs.msg import Header
 
-NODE_POW="https://ENTERYOURNODEHERE"	
-NODE_ROUTING="https://ENTERYOURNODEHERE"
+NODE_POW="https://YOURNODE"	
+NODE_ROUTING="https://YOURNODE"
 ADDRESS='MICHIS99ROS99TEST9999999999999999999999999999999999999999999999999999999999999999'# ENTER YOUR ADDRESS HERE
 
 def get_main(msg):
@@ -33,11 +33,19 @@ def search_new_hash(new,old,single_hash):
 
 def trytes_to_ascii(trytes):
 	message = ''
-	i=2
-	while i < 2188:	
-		message = TryteString(message + trytes[i])		
-		i=i+1
-	return message.decode()
+	value=''
+	timestamp=''
+	tag=''
+	for m in range(2,2188):
+		message = TryteString(message + trytes[m])		
+	for l in range(2270,2297):
+		value = TryteString(value + trytes[l])
+	for n in range(2594,2621):
+		tag = TryteString(tag + trytes[n])
+	for o in range(2324,2333):
+		timestamp = TryteString(timestamp + trytes[o])
+	return message.decode(),str(tag),int(int_from_trits(value.as_trits())),int(int_from_trits(timestamp.as_trits()))
+
 
 
 
@@ -48,7 +56,7 @@ transaction_info_pub = rospy.Publisher('/iota/transaction_info', transaction_inf
 rospy.init_node('iota_transaction_info', anonymous=False)
 transaction_info = transaction_info()
 h=Header()
-print "get_transaction_message READY"
+print "get_transaction_info READY"
 
 while not rospy.is_shutdown():
 	rospy.Subscriber("/iota/main", main,get_main,queue_size=1)
@@ -89,10 +97,12 @@ while not rospy.is_shutdown():
 
 		jsonData = json.loads(returnData)
 		trytes=json.dumps(jsonData['trytes'])	
-		message=trytes_to_ascii(trytes)
+		message,tag,value,timestamp=trytes_to_ascii(trytes)
 		transaction_info.message = message
 		h.stamp = rospy.Time.now()
+		transaction_info.tag = tag
+		transaction_info.value = value
+		transaction_info.timestamp = timestamp
 		transaction_info.header = h
 		transaction_info_pub.publish(transaction_info)
-		print message
 
