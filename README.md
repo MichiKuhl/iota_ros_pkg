@@ -19,8 +19,8 @@ Use the following command to start the IOTA Node:
 This package was only tested with ROS Kinetic.
 
 
- 
-  
+
+**IMPORTANT: This package is still under development.**
    
     
      
