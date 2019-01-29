@@ -1,4 +1,6 @@
 
+DUE TO LACK OF TIME THIS PROJECT IS CURRENTLY PAUSED
+
 IOTA ROS implemetation
 =====
 This is a package for the Robot Operating System framework.
